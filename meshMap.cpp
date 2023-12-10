@@ -10,7 +10,7 @@ void yato() {
 #endif
 }
 
-class meshHap {
+class meshMap {
 private:
     deque<int> *ptrArray;
     int sizeComponent, noAllArrays, totalSize, maxSize, noUsedArrays;
@@ -71,7 +71,7 @@ private:
 
 public:
 
-    explicit meshHap(vector<int> &arr) {
+    explicit meshMap(vector<int> &arr) {
         totalSize = arr.size();
         sizeComponent = ceil(sqrt(totalSize));
         noAllArrays = 2 * sizeComponent;
@@ -89,7 +89,7 @@ public:
         }
     }
 
-    meshHap(int size = 0) {
+    meshMap(int size = 0) {
         totalSize = size;
         sizeComponent = ceil(sqrt(totalSize));
         sizeComponent = max(sizeComponent, 1);
@@ -108,7 +108,7 @@ public:
         }
     }
 
-    meshHap(const meshHap &other) {
+    meshMap(const meshMap &other) {
         totalSize = other.totalSize;
         sizeComponent = other.sizeComponent;
         noAllArrays = other.noAllArrays;
@@ -126,7 +126,7 @@ public:
 
     }
 
-    explicit meshHap(const int arr[]) {
+    explicit meshMap(const int arr[]) {
         totalSize = sizeof(arr) / sizeof(arr[0]);
         sizeComponent = ceil(sqrt(totalSize));
         noAllArrays = 2 * sizeComponent;
@@ -235,7 +235,7 @@ public:
         updateSizeInfo(1);
     }
 
-    bool operator==(const meshHap &other) const {
+    bool operator==(const meshMap &other) const {
 
         bool areEqual = other.totalSize == this->totalSize;
         if (!areEqual) return false;
@@ -265,7 +265,7 @@ public:
 
     }
 
-    ~meshHap() {
+    ~meshMap() {
         delete[] ptrArray;
     }
 };
